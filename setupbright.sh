@@ -4,9 +4,10 @@ echo "© Rohit Ner 2017"
 var='$1'
 echo "# added for modifying brightness using digital values
 setlight() {
+    currpath="$(pwd)"
     cd /sys/class/backlight/intel_backlight
     echo "$var" | sudo tee brightness
-    cd
+    cd $currpath
 }
 " >> .bashrc
 source .bashrc
